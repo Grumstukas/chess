@@ -1,0 +1,51 @@
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+}
+body {
+    margin: 2vh 50px;
+    padding: 20px;
+    background-color:var(--beige);
+}
+#chess{
+    display: inline-block;
+    float: left;
+    background-color:var(--dim_gray);
+    height: 90vh;
+    width: 100%;
+}
+    #board-container{
+        display: inline-block;
+        float: left;
+        background-color: var(--brown);
+        border-radius: 8px;
+    }
+    #board-container > #board >.row >.cell{
+        display: inline-block;
+        float: left;
+        border: 1px solid var(--beige);
+        text-align: center;
+        font-size: 30px;
+        line-height: 20px;
+        color: var(--beige);
+    }
+    #board-container > #board >.row >.cell.white{
+        background-image: url(../img/light.jpg);
+    }
+    #board-container > #board >.row >.cell.dark{
+        background-image: url(../img/dark.jpg);
+    }
+
+    #info{
+        display: inline-block;
+        float: right;
+        /* height: 100%; */
+        border: 5px solid brown;
+        border-radius: 8px;
+    }
