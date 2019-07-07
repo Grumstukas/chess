@@ -11,7 +11,8 @@
                 cellSize: 1,
                 letters: ['','A','B','C','D','E','F','G','H',''],
                 numbers: ['','8','7','6','5','4','3','2','1','']
-            }
+            },
+            allBoard:[],
     };
     var game = document.querySelector('#chess'),
             boardContainer = game.querySelector('#board-container'),
@@ -84,22 +85,39 @@ function drawCells(){
     return gameBoard.innerHTML = HTML
 }
 function paintCells(){
-    var cellList = document.querySelectorAll('#chess > #board-container > #board > .row > .cell'),
-        allCells = Array.from(cellList);
-        // allCells[10].classList.add('white');
-        // cellList[20].classList.add('white');
-    console.log(allCells);
-    console.log(allCells.lenght);
-
-    for(var i=0; i<100; i++){
-        if (i>10 && i<90){
-            if (i % 2 === 0){
-                allCells[i].classList.add('white');
-            }else{
-                allCells[i].classList.add('dark');
+    var cellList = boardContainer.querySelectorAll('#chess > #board-container > #board > .row > .cell'),
+        cellsCount = board.cells.x * board.cells.y;
+    
+    for (let y=0; y<board.cells.y-1; y++){
+        if (y == 0 || y == board.cells.y){
+            continue;
+        }
+        if( y % 2==0 ){
+            for(let x=0; x<board.cells.x-1; x++){
+                if (x == board.cells.x || x == 0){
+                    continue;
+                }
+                if ( x % 2 ==0 ){
+                    cellList[x+(10*y)].classList.add('white');
+                }
+                if ( x % 2 !=0 ){
+                    cellList[x+(10*y)].classList.add('dark');
+                }
+            }
+        }
+        if( y % 2!==0 ){
+            for(let x=1; x<board.cells.x-1; x++){
+                if (x == board.cells.x || x == 0){
+                    continue;
+                }
+                if ( x % 2 !==0 ){
+                    cellList[x+(10*y)].classList.add('white');
+                }
+                if ( x % 2 ==0 ){
+                    cellList[x+(10*y)].classList.add('dark');
+                }
             }
         }
     }
-    console.log(allCells[10]);
     return
 }
