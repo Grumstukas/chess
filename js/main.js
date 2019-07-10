@@ -65,16 +65,30 @@ function drawCells(){
                  
                 
                 if(y==0){
-                    HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize*0.5}px; margin-top:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px;">${letter}</div>`;  
-                }
-                else if(y==(board.cells.y-1)){
-                    HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize*0.5}px; margin-bottom:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px;">${letter}</div>`;
-                }else{
                     if(x==0){
-                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize}px; margin-left:${cellSize*0.5}px; padding:${(cellSize-20)*0.5}px 0;">${number}</div>`;
+                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize*0.5}px; margin-top:${cellSize*0.5}px; margin-left:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px; border:none; background-color:var(--dim_gray); border-radius:15px 0 0 0;'">${letter}</div>`;
                     }
                     else if(x==(board.cells.x-1)){
-                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize}px; margin-right:${cellSize*0.5}px; padding:${(cellSize-20)*0.5}px 0;">${number}</div>`;
+                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize*0.5}px; margin-top:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px; border:none; background-color:var(--dim_gray);border-radius:0 15px 0 0;">${letter}</div>`;
+                    }else{
+                        HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize*0.5}px; margin-top:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px;border:none; background-color:var(--dim_gray);">${letter}</div>`;  
+                    }
+                }
+                else if(y==(board.cells.y-1)){
+                    if(x==0){
+                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize*0.5}px; margin-bottom:${cellSize*0.5}px; margin-left:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px; border:none; background-color:var(--dim_gray); border-radius: 0 0 0 15px;">${letter}</div>`;
+                    }
+                    else if(x==(board.cells.x-1)){
+                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize*0.5}px; margin-bottom:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px; border:none; background-color:var(--dim_gray); border-radius: 0 0 15px 0;">${letter}</div>`;
+                    }else{
+                        HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize*0.5}px; margin-bottom:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px;border:none; background-color:var(--dim_gray);">${letter}</div>`;
+                    }
+                }else{
+                    if(x==0){
+                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize}px; margin-left:${cellSize*0.5}px; padding:${(cellSize-20)*0.5}px 0;border:none; background-color:var(--dim_gray);">${number}</div>`;
+                    }
+                    else if(x==(board.cells.x-1)){
+                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize}px; margin-right:${cellSize*0.5}px; padding:${(cellSize-20)*0.5}px 0;border:none; background-color:var(--dim_gray);">${number}</div>`;
                     }else{
                         HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize}px;"></div>`;   
                     }
