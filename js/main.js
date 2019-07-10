@@ -34,9 +34,7 @@ function renderBoard(){
         }
         if(maxCellHeight%2!==0){
             maxCellHeight = maxCellHeight-1;
-        }
-        console.log(maxCellWidth, maxCellHeight);
-        
+        }       
 
         board.cells.cellSize = maxCellWidth;  //nežinomas langelio dydis keičiamas maksimaliu langelio pločiu
         // cellSize = maxCellWidth; //ir tai pervadinama cellSize
