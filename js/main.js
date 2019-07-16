@@ -441,6 +441,35 @@ function lay_out_figures(){
 
                 HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize}px; top:${y}px; left:${x}px; background-image: url(../img/figures/${img});"></div>`;   
             }
-            
+        
     return playBoard.innerHTML = HTML
 }
+
+function figure_click(event){
+    var cellSize = board.cells.cellSize,
+        raides = ['A','B','C','D','E','F','G','H'],
+        a = event.target.style.backgroundImage.slice(20),
+        name = (a.slice(0,a.length-6)).slice(((a.slice(0,a.length-6)).indexOf('.'))+1),
+        team = (a.slice(0,a.length-6)).slice(0,((a.slice(0,a.length-6)).indexOf('.'))),
+        y = event.target.offsetTop/cellSize,
+        x = raides[event.target.offsetLeft/cellSize -1],
+        coordinates = x+y;
+        
+        // if( team == 'light'){
+
+        // }
+        // namePlace = document.querySelector(`#history > .team > .figure_name`),
+        // currentPositionPlace = document.querySelector(`#history > .team > .current_position`);
+
+console.log('top = '+y);
+console.log('left = '+x);
+console.log('team = '+team);
+console.log('name = '+name);
+console.log(coordinates);
+    
+    return; 
+}
+var all_figures = playBoard.querySelectorAll('.cell');
+    all_figures.forEach(figure => {
+        figure.addEventListener( 'click', figure_click );
+    });
