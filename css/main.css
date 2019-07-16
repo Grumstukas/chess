@@ -67,3 +67,51 @@ body {
         border: 5px solid brown;
         border-radius: 8px;
     }
+    #info > *{
+        display: inline-block;
+        float:left;
+        width: 100%;
+        height: 140px;
+    }
+    #info > #start{
+        background-color: darkgreen;
+    }
+    #info > #clocks{
+        background-color: rgb(224, 211, 97);
+    }
+    #info > #clocks{
+        background-color: goldenrod;
+    }
+    #info > #history{
+        background-color:olive;
+    }
+        #history > .team{
+            display: inline-block;
+            float: left;
+            width: 50%;
+            height: 100%;
+        }
+        #history > .team > .figure_name{
+            display: inline-block;
+            float: left;
+            width: 40%;
+            height: 100%;
+            border: 1px solid blue;
+        }
+        #history > .team > .current_position{
+            display: inline-block;
+            float: left;
+            width: 20%;
+            height: 100%;
+            border: 1px solid blue;
+        }
+        #history > .team > .next_position{
+            display: inline-block;
+            float: left;
+            width: 20%;
+            height: 100%;
+            border: 1px solid blue;
+        }
+    #info > #chart{
+        background-color:teal;
+    }
