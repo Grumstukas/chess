@@ -13,15 +13,245 @@
                 numbers: ['','8','7','6','5','4','3','2','1','']
             },
             allBoard:[],
-    };
+        },
+        figures = [
+            // white team
+            {
+                x:1,
+                y:1,
+                name: 'rook',
+                team: 'white',
+                img: 'light.rook.png'
+            },
+            {
+                x:2,
+                y:1,
+                name: 'knight',
+                team: 'white',
+                img: 'light.knight.png'
+            },
+            {
+                x:3,
+                y:1,
+                name: 'bishop',
+                team: 'white',
+                img: 'light.bishop.png'
+            },
+            {
+                x:4,
+                y:1,
+                name: 'king',
+                team: 'white',
+                img: 'light.king.png'
+            },
+            {
+                x:5,
+                y:1,
+                name: 'queen',
+                team: 'white',
+                img: 'light.queen.png'
+            },
+            {
+                x:6,
+                y:1,
+                name: 'bishop',
+                team: 'white',
+                img: 'light.bishop.png'
+            },
+            {
+                x:7,
+                y:1,
+                name: 'knight',
+                team: 'white',
+                img: 'light.knight_r.png'
+            },
+            {
+                x:8,
+                y:1,
+                name: 'rook',
+                team: 'white',
+                img: 'light.rook.png'
+            },
+            {
+                x:1,
+                y:2,
+                name: 'pawn',
+                team: 'white',
+                img: 'light.pawn.png'
+            },
+            {
+                x:2,
+                y:2,
+                name: 'pawn',
+                team: 'white',
+                img: 'light.pawn.png'
+            },
+            {
+                x:3,
+                y:2,
+                name: 'pawn',
+                team: 'white',
+                img: 'light.pawn.png'
+            },
+            {
+                x:4,
+                y:2,
+                name: 'pawn',
+                team: 'white',
+                img: 'light.pawn.png'
+            },
+            {
+                x:5,
+                y:2,
+                name: 'pawn',
+                team: 'white',
+                img: 'light.pawn.png'
+            },
+            {
+                x:6,
+                y:2,
+                name: 'pawn',
+                team: 'white',
+                img: 'light.pawn.png'
+            },
+            {
+                x:7,
+                y:2,
+                name: 'pawn',
+                team: 'white',
+                img: 'light.pawn.png'
+            },
+            {
+                x:8,
+                y:2,
+                name: 'pawn',
+                team: 'white',
+                img: 'light.pawn.png'
+            },
+            // dark team
+            {
+                x:1,
+                y:8,
+                name: 'rook',
+                team: 'dark',
+                img: 'dark.rook.png'
+            },
+            {
+                x:2,
+                y:8,
+                name: 'knight',
+                team: 'dark',
+                img: 'dark.knight_l.png'
+            },
+            {
+                x:3,
+                y:8,
+                name: 'bishop',
+                team: 'dark',
+                img: 'dark.bishop.png'
+            },
+            {
+                x:4,
+                y:8,
+                name: 'king',
+                team: 'dark',
+                img: 'dark.king.png'
+            },
+            {
+                x:5,
+                y:8,
+                name: 'queen',
+                team: 'dark',
+                img: 'dark.queen.png'
+            },
+            {
+                x:6,
+                y:8,
+                name: 'bishop',
+                team: 'dark',
+                img: 'dark.bishop.png'
+            },
+            {
+                x:7,
+                y:8,
+                name: 'knight',
+                team: 'dark',
+                img: 'dark.knight_r.png'
+            },
+            {
+                x:8,
+                y:8,
+                name: 'rook',
+                team: 'dark',
+                img: 'dark.rook.png'
+            },
+            {
+                x:1,
+                y:7,
+                name: 'pawn',
+                team: 'dark',
+                img: 'dark.pawn.png'
+            },
+            {
+                x:2,
+                y:7,
+                name: 'pawn',
+                team: 'dark',
+                img: 'dark.pawn.png'
+            },
+            {
+                x:3,
+                y:7,
+                name: 'pawn',
+                team: 'dark',
+                img: 'dark.pawn.png'
+            },
+            {
+                x:4,
+                y:7,
+                name: 'pawn',
+                team: 'dark',
+                img: 'dark.pawn.png'
+            },
+            {
+                x:5,
+                y:7,
+                name: 'pawn',
+                team: 'dark',
+                img: 'dark.pawn.png'
+            },
+            {
+                x:6,
+                y:7,
+                name: 'pawn',
+                team: 'dark',
+                img: 'dark.pawn.png'
+            },
+            {
+                x:7,
+                y:7,
+                name: 'pawn',
+                team: 'dark',
+                img: 'dark.pawn.png'
+            },
+            {
+                x:8,
+                y:7,
+                name: 'pawn',
+                team: 'dark',
+                img: 'dark.pawn.png'
+            }
+        ];
     var game = document.querySelector('#chess'),
             boardContainer = game.querySelector('#board-container'),
                 gameBoard = boardContainer.querySelector('#board'),
+                playBoard = boardContainer.querySelector('#play_board'),
                 gameInfo = game.querySelector('#info');
         board.size.width = parseInt( getComputedStyle( game ).width );
         board.size.height = parseInt( getComputedStyle( game ).height );
-        console.log(board.size.width,board.size.height);
+        
         renderBoard();
+        
 
 // F U N K C I J O S
 
@@ -51,16 +281,23 @@ function renderBoard(){
         // gameBoard.style.width = Math.floor(((board.cells.x * cellSize) * 100) / board.size.width) + '%';
         gameBoard.style.width = board.cells.x * cellSize + 'px';
         console.log(gameBoard.style.width);
+
+        playBoard.style.height = board.cells.y * cellSize + 'px';
+        // playBoard.style.width = Math.floor(((board.cells.x * cellSize) * 100) / board.size.width) + '%';
+        playBoard.style.width = board.cells.x * cellSize + 'px';
+        playBoard.style.padding = cellSize + 'px';
+        console.log(playBoard.style.width);
         
         
         gameInfo.style.width = (board.size.width - (board.cells.x * cellSize)) + 'px';
         // gameInfo.style.width = (100 - Math.floor(((board.cells.x * cellSize) * 100) / board.size.width)) + '%';
         gameInfo.style.height = gameBoard.style.height;
 
-        drawCells();
+        drawBoardCells();
         paintCells();
+        lay_out_figures()
 }
-function drawCells(){
+function drawBoardCells(){
     let cellSize = board.cells.cellSize,
         letters = board.cells.letters,
         numbers = board.cells.numbers,
@@ -75,31 +312,80 @@ function drawCells(){
                 
                 if(y==0){
                     if(x==0){
-                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize*0.5}px; margin-top:${cellSize*0.5}px; margin-left:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px; border:none; background-color:var(--dim_gray); border-radius:15px 0 0 0;'">${letter}</div>`;
+                        HTML += `<div class="cell" style="  width: ${cellSize*0.5}px; 
+                                                            height: ${cellSize*0.5}px; 
+                                                            margin-top:${cellSize*0.5}px; 
+                                                            margin-left:${cellSize*0.5}px; 
+                                                            padding:${((cellSize*0.5)-20)*0.5}px; 
+                                                            border:none; 
+                                                            background-color:var(--dim_gray); 
+                                                            border-radius:15px 0 0 0;">${letter}</div>`;
                     }
                     else if(x==(board.cells.x-1)){
-                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize*0.5}px; margin-top:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px; border:none; background-color:var(--dim_gray);border-radius:0 15px 0 0;">${letter}</div>`;
+                        HTML += `<div class="cell" style="  width: ${cellSize*0.5}px; 
+                                                            height: ${cellSize*0.5}px; 
+                                                            margin-top:${cellSize*0.5}px; 
+                                                            padding:${((cellSize*0.5)-20)*0.5}px; 
+                                                            border:none; 
+                                                            background-color:var(--dim_gray);
+                                                            border-radius:0 15px 0 0;">${letter}</div>`;
                     }else{
-                        HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize*0.5}px; margin-top:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px;border:none; background-color:var(--dim_gray);transform: rotate(180deg);">${letter}</div>`;  
+                        HTML += `<div class="cell" style="  width: ${cellSize}px; 
+                                                            height: ${cellSize*0.5}px; 
+                                                            margin-top:${cellSize*0.5}px; 
+                                                            padding:${((cellSize*0.5)-20)*0.5}px;
+                                                            border:none; 
+                                                            background-color:var(--dim_gray);
+                                                            transform: rotate(180deg);">${letter}</div>`;  
                     }
                 }
                 else if(y==(board.cells.y-1)){
                     if(x==0){
-                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize*0.5}px; margin-bottom:${cellSize*0.5}px; margin-left:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px; border:none; background-color:var(--dim_gray); border-radius: 0 0 0 15px;">${letter}</div>`;
+                        HTML += `<div class="cell" style="  width: ${cellSize*0.5}px; 
+                                                            height: ${cellSize*0.5}px; 
+                                                            margin-bottom:${cellSize*0.5}px; 
+                                                            margin-left:${cellSize*0.5}px; 
+                                                            padding:${((cellSize*0.5)-20)*0.5}px; 
+                                                            border:none; 
+                                                            background-color:var(--dim_gray); 
+                                                            border-radius: 0 0 0 15px;">${letter}</div>`;
                     }
                     else if(x==(board.cells.x-1)){
-                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize*0.5}px; margin-bottom:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px; border:none; background-color:var(--dim_gray); border-radius: 0 0 15px 0;">${letter}</div>`;
+                        HTML += `<div class="cell" style="  width: ${cellSize*0.5}px; 
+                                                            height: ${cellSize*0.5}px; 
+                                                            margin-bottom:${cellSize*0.5}px; 
+                                                            padding:${((cellSize*0.5)-20)*0.5}px; 
+                                                            border:none; 
+                                                            background-color:var(--dim_gray); 
+                                                            border-radius: 0 0 15px 0;">${letter}</div>`;
                     }else{
-                        HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize*0.5}px; margin-bottom:${cellSize*0.5}px; padding:${((cellSize*0.5)-20)*0.5}px;border:none; background-color:var(--dim_gray);">${letter}</div>`;
+                        HTML += `<div class="cell" style="  width: ${cellSize}px; 
+                                                            height: ${cellSize*0.5}px; 
+                                                            margin-bottom:${cellSize*0.5}px; 
+                                                            padding:${((cellSize*0.5)-20)*0.5}px;
+                                                            border:none; 
+                                                            background-color:var(--dim_gray);">${letter}</div>`;
                     }
                 }else{
                     if(x==0){
-                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize}px; margin-left:${cellSize*0.5}px; padding:${(cellSize-20)*0.5}px 0;border:none; background-color:var(--dim_gray);">${number}</div>`;
+                        HTML += `<div class="cell" style="  width: ${cellSize*0.5}px; 
+                                                            height: ${cellSize}px; 
+                                                            margin-left:${cellSize*0.5}px; 
+                                                            padding:${(cellSize-20)*0.5}px 0;
+                                                            border:none; 
+                                                            background-color:var(--dim_gray);">${number}</div>`;
                     }
                     else if(x==(board.cells.x-1)){
-                        HTML += `<div class="cell" style="width: ${cellSize*0.5}px; height: ${cellSize}px; margin-right:${cellSize*0.5}px; padding:${(cellSize-20)*0.5}px 0;border:none; background-color:var(--dim_gray);transform: rotate(180deg);">${number}</div>`;
+                        HTML += `<div class="cell" style="  width: ${cellSize*0.5}px; 
+                                                            height: ${cellSize}px; 
+                                                            margin-right:${cellSize*0.5}px; 
+                                                            padding:${(cellSize-20)*0.5}px 0;
+                                                            border:none; 
+                                                            background-color:var(--dim_gray);
+                                                            transform: rotate(180deg);">${number}</div>`;
                     }else{
-                        HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize}px;"></div>`;   
+                        HTML += `<div class="cell" style="  width: ${cellSize}px; 
+                                                            height: ${cellSize}px;"></div>`;   
                     }
                 }
             }
@@ -143,4 +429,18 @@ function paintCells(){
         }
     }
     return
+}
+function lay_out_figures(){
+    let cellSize = board.cells.cellSize,
+        HTML = '',
+        boardCellCount = 32;
+            for (let i = 0; i < boardCellCount; i++){
+                var x = (figures[i].x)*cellSize,
+                    y = (figures[i].y)*cellSize,
+                    img = figures[i].img;
+
+                HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize}px; top:${y}px; left:${x}px; background-image: url(../img/figures/${img});"></div>`;   
+            }
+            
+    return playBoard.innerHTML = HTML
 }
