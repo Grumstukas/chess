@@ -22,9 +22,16 @@ body {
 }
     #board-container{
         display: inline-block;
+        position: relative;
         float: left;
         background-color: var(--brown);
         border-radius: 8px;
+    }
+    #board-container > #play_board{
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        text-align: center;
     }
     #board-container > #board >.row >.cell{
         display: inline-block;
@@ -35,6 +42,17 @@ body {
         line-height: 20px;
         color: var(--beige);
     }
+    
+    #board-container > #play_board >.cell{
+        display: inline-block;
+        position: absolute;
+        float: left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 3px solid transparent;
+    }
+    
     #board-container > #board >.row >.cell.white{
         background-image: url(../img/light.jpg);
     }
