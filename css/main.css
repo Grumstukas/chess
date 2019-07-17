@@ -55,6 +55,9 @@ body {
         #board-container > #play_board >.cell.active{
             border: 4px solid goldenrod;
         }
+        #board-container > #play_board >.cell.nextMove{
+            border: 4px solid aquamarine;
+        }
     
     #board-container > #board >.row >.cell.white{
         background-image: url(../img/light.jpg);

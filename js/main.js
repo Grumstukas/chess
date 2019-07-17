@@ -464,9 +464,8 @@ function paintCells(){
 }
 function lay_out_figures(){
     let cellSize = board.cells.cellSize,
-        HTML = '',
-        boardCellCount = 32;
-            for (let i = 0; i < boardCellCount; i++){
+        HTML = '';
+            for (let i = 0; i < figures.length; i++){
                 var x = (figures[i].x)*cellSize,
                     y = (figures[i].y)*cellSize,
                     img = figures[i].img;
@@ -490,24 +489,32 @@ function figure_click(event){
         HTML = '',
         namePlace = document.querySelector(`#history > .${team} > .figure_name`),
         figure = document.querySelectorAll(`#board-container > #play_board >.cell`),
-        boardCellCount = 32,
-        click_count;
+        click_count = 0;
 
-            for (let i = 0; i < boardCellCount; i++){ 
+            for (let i = 0; i < figures.length; i++){ 
                 figure[i].classList.remove('active');
+                figure[i].classList.remove('nextMove');
                 if ((figure[i].offsetTop === y*cellSize) && (figure[i].offsetLeft === x*cellSize)){
                     figure[i].classList.add('active');
                     figures[i].click++;
-                    if (click_count > 1 || figures[i].click % 2 ==0 ){
-                        figure[i].style.border = "";
+                    
+                    if (click_count > 1 || figures[i].click % 2 == 0 ){
+                        figure[i].classList.remove('active'); 
                     } 
                 }else{
                     figures[i].click = 0;
+                    figure[i].classList.remove('nextMove'); 
                 }
             }
 
+            for (let i = 0; i < figures.length; i++){
+                click_count = click_count + figures[i].click;
+            }
+        console.log(click_count);
+            
         HTML += `Figūra ${name} pajudėjo iš ${coordinates} į  ...`;
         namePlace.innerHTML = HTML
+        available_movies (name, click_count , x, y);
         
     return figures; 
 }
@@ -516,3 +523,37 @@ var all_figures = playBoard.querySelectorAll('.cell');
     all_figures.forEach(figure => {
         figure.addEventListener( 'click', figure_click );
     });
+
+function available_movies(name, click_count, x, y){
+    var cellSize = board.cells.cellSize,
+        figure = document.querySelectorAll(`#board-container > #play_board >.cell`);
+
+            for (let i = 0; i < figures.length; i++){
+                if (name == 'king' && click_count % 2 != 0){
+                    if (((figure[i].offsetTop === y*cellSize) && (figure[i].offsetLeft === (x+1)*cellSize)) ||
+                    ((figure[i].offsetTop === y*cellSize) && (figure[i].offsetLeft === (x-1)*cellSize)) ||
+                    ((figure[i].offsetTop === (y+1)*cellSize) && (figure[i].offsetLeft === (x)*cellSize)) ||
+                    ((figure[i].offsetTop === (y-1)*cellSize) && (figure[i].offsetLeft === (x)*cellSize)) ||
+                    ((figure[i].offsetTop === (y-1)*cellSize) && (figure[i].offsetLeft === (x+1)*cellSize)) ||
+                    ((figure[i].offsetTop === (y-1)*cellSize) && (figure[i].offsetLeft === (x-1)*cellSize)) ||
+                    ((figure[i].offsetTop === (y+1)*cellSize) && (figure[i].offsetLeft === (x-1)*cellSize)) ||
+                    ((figure[i].offsetTop === (y+1)*cellSize) && (figure[i].offsetLeft === (x+1)*cellSize))) {
+                        figure[i].classList.add('nextMove');
+                    }
+                }
+                if (name == 'king' && click_count % 2 == 0 ){
+                    if (((figure[i].offsetTop === y*cellSize) && (figure[i].offsetLeft === (x+1)*cellSize)) ||
+                    ((figure[i].offsetTop === y*cellSize) && (figure[i].offsetLeft === (x-1)*cellSize)) ||
+                    ((figure[i].offsetTop === (y+1)*cellSize) && (figure[i].offsetLeft === (x)*cellSize)) ||
+                    ((figure[i].offsetTop === (y-1)*cellSize) && (figure[i].offsetLeft === (x)*cellSize)) ||
+                    ((figure[i].offsetTop === (y-1)*cellSize) && (figure[i].offsetLeft === (x+1)*cellSize)) ||
+                    ((figure[i].offsetTop === (y-1)*cellSize) && (figure[i].offsetLeft === (x-1)*cellSize)) ||
+                    ((figure[i].offsetTop === (y+1)*cellSize) && (figure[i].offsetLeft === (x-1)*cellSize)) ||
+                    ((figure[i].offsetTop === (y+1)*cellSize) && (figure[i].offsetLeft === (x+1)*cellSize))) {
+                        figure[i].classList.remove('nextMove');
+                    }
+                }
+
+            }
+    return
+}
