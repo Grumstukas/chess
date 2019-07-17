@@ -52,6 +52,9 @@ body {
         background-position: center;
         border: 3px solid transparent;
     }
+        #board-container > #play_board >.cell.active{
+            border: 4px solid goldenrod;
+        }
     
     #board-container > #board >.row >.cell.white{
         background-image: url(../img/light.jpg);
