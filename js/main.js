@@ -494,9 +494,9 @@ function figure_click(event){
         click_count;
 
             for (let i = 0; i < boardCellCount; i++){ 
-                figure[i].style.border = "";
+                figure[i].classList.remove('active');
                 if ((figure[i].offsetTop === y*cellSize) && (figure[i].offsetLeft === x*cellSize)){
-                    figure[i].style.border = "4px solid goldenrod";
+                    figure[i].classList.add('active');
                     figures[i].click++;
                     if (click_count > 1 || figures[i].click % 2 ==0 ){
                         figure[i].style.border = "";
@@ -506,7 +506,6 @@ function figure_click(event){
                 }
             }
 
-            
         HTML += `Figūra ${name} pajudėjo iš ${coordinates} į  ...`;
         namePlace.innerHTML = HTML
         
