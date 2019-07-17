@@ -10,7 +10,7 @@
                 y: 10,
                 cellSize: 1,
                 letters: ['','A','B','C','D','E','F','G','H',''],
-                numbers: ['','8','7','6','5','4','3','2','1','']
+                numbers: ['','1','2','3','4','5','6','7','8','']
             },
             allBoard:[],
         },
@@ -21,112 +21,128 @@
                 y:1,
                 name: 'rook',
                 team: 'white',
-                img: 'light.rook.png'
+                img: 'light.rook.png',
+                click: 0
             },
             {
                 x:2,
                 y:1,
                 name: 'knight',
                 team: 'white',
-                img: 'light.knight.png'
+                img: 'light.knight.png',
+                click: 0
             },
             {
                 x:3,
                 y:1,
                 name: 'bishop',
                 team: 'white',
-                img: 'light.bishop.png'
+                img: 'light.bishop.png',
+                click: 0
             },
             {
                 x:4,
                 y:1,
                 name: 'king',
                 team: 'white',
-                img: 'light.king.png'
+                img: 'light.king.png',
+                click: 0
             },
             {
                 x:5,
                 y:1,
                 name: 'queen',
                 team: 'white',
-                img: 'light.queen.png'
+                img: 'light.queen.png',
+                click: 0
             },
             {
                 x:6,
                 y:1,
                 name: 'bishop',
                 team: 'white',
-                img: 'light.bishop.png'
+                img: 'light.bishop.png',
+                click: 0
             },
             {
                 x:7,
                 y:1,
                 name: 'knight',
                 team: 'white',
-                img: 'light.knight_r.png'
+                img: 'light.knight_r.png',
+                click: 0
             },
             {
                 x:8,
                 y:1,
                 name: 'rook',
                 team: 'white',
-                img: 'light.rook.png'
+                img: 'light.rook.png',
+                click: 0
             },
             {
                 x:1,
                 y:2,
                 name: 'pawn',
                 team: 'white',
-                img: 'light.pawn.png'
+                img: 'light.pawn.png',
+                click: 0
             },
             {
                 x:2,
                 y:2,
                 name: 'pawn',
                 team: 'white',
-                img: 'light.pawn.png'
+                img: 'light.pawn.png',
+                click: 0
             },
             {
                 x:3,
                 y:2,
                 name: 'pawn',
                 team: 'white',
-                img: 'light.pawn.png'
+                img: 'light.pawn.png',
+                click: 0
             },
             {
                 x:4,
                 y:2,
                 name: 'pawn',
                 team: 'white',
-                img: 'light.pawn.png'
+                img: 'light.pawn.png',
+                click: 0
             },
             {
                 x:5,
                 y:2,
                 name: 'pawn',
                 team: 'white',
-                img: 'light.pawn.png'
+                img: 'light.pawn.png',
+                click: 0
             },
             {
                 x:6,
                 y:2,
                 name: 'pawn',
                 team: 'white',
-                img: 'light.pawn.png'
+                img: 'light.pawn.png',
+                click: 0
             },
             {
                 x:7,
                 y:2,
                 name: 'pawn',
                 team: 'white',
-                img: 'light.pawn.png'
+                img: 'light.pawn.png',
+                click: 0
             },
             {
                 x:8,
                 y:2,
                 name: 'pawn',
                 team: 'white',
-                img: 'light.pawn.png'
+                img: 'light.pawn.png',
+                click: 0
             },
             // dark team
             {
@@ -134,112 +150,128 @@
                 y:8,
                 name: 'rook',
                 team: 'dark',
-                img: 'dark.rook.png'
+                img: 'dark.rook.png',
+                click: 0
             },
             {
                 x:2,
                 y:8,
                 name: 'knight',
                 team: 'dark',
-                img: 'dark.knight_l.png'
+                img: 'dark.knight_l.png',
+                click: 0
             },
             {
                 x:3,
                 y:8,
                 name: 'bishop',
                 team: 'dark',
-                img: 'dark.bishop.png'
+                img: 'dark.bishop.png',
+                click: 0
             },
             {
                 x:4,
                 y:8,
                 name: 'king',
                 team: 'dark',
-                img: 'dark.king.png'
+                img: 'dark.king.png',
+                click: 0
             },
             {
                 x:5,
                 y:8,
                 name: 'queen',
                 team: 'dark',
-                img: 'dark.queen.png'
+                img: 'dark.queen.png',
+                click: 0
             },
             {
                 x:6,
                 y:8,
                 name: 'bishop',
                 team: 'dark',
-                img: 'dark.bishop.png'
+                img: 'dark.bishop.png',
+                click: 0
             },
             {
                 x:7,
                 y:8,
                 name: 'knight',
                 team: 'dark',
-                img: 'dark.knight_r.png'
+                img: 'dark.knight_r.png',
+                click: 0
             },
             {
                 x:8,
                 y:8,
                 name: 'rook',
                 team: 'dark',
-                img: 'dark.rook.png'
+                img: 'dark.rook.png',
+                click: 0
             },
             {
                 x:1,
                 y:7,
                 name: 'pawn',
                 team: 'dark',
-                img: 'dark.pawn.png'
+                img: 'dark.pawn.png',
+                click: 0
             },
             {
                 x:2,
                 y:7,
                 name: 'pawn',
                 team: 'dark',
-                img: 'dark.pawn.png'
+                img: 'dark.pawn.png',
+                click: 0
             },
             {
                 x:3,
                 y:7,
                 name: 'pawn',
                 team: 'dark',
-                img: 'dark.pawn.png'
+                img: 'dark.pawn.png',
+                click: 0
             },
             {
                 x:4,
                 y:7,
                 name: 'pawn',
                 team: 'dark',
-                img: 'dark.pawn.png'
+                img: 'dark.pawn.png',
+                click: 0
             },
             {
                 x:5,
                 y:7,
                 name: 'pawn',
                 team: 'dark',
-                img: 'dark.pawn.png'
+                img: 'dark.pawn.png',
+                click: 0
             },
             {
                 x:6,
                 y:7,
                 name: 'pawn',
                 team: 'dark',
-                img: 'dark.pawn.png'
+                img: 'dark.pawn.png',
+                click: 0
             },
             {
                 x:7,
                 y:7,
                 name: 'pawn',
                 team: 'dark',
-                img: 'dark.pawn.png'
+                img: 'dark.pawn.png',
+                click: 0
             },
             {
                 x:8,
                 y:7,
                 name: 'pawn',
                 team: 'dark',
-                img: 'dark.pawn.png'
+                img: 'dark.pawn.png',
+                click: 0
             }
         ];
     var game = document.querySelector('#chess'),
@@ -439,7 +471,7 @@ function lay_out_figures(){
                     y = (figures[i].y)*cellSize,
                     img = figures[i].img;
 
-                HTML += `<div class="cell" style="width: ${cellSize}px; height: ${cellSize}px; top:${y}px; left:${x}px; background-image: url(../img/figures/${img});"></div>`;   
+                HTML += `<div class="cell" style="width: ${cellSize}px; height:${cellSize}px; top:${y}px; left:${x}px; background-image: url(../img/figures/${img});"></div>`;   
             }
         
     return playBoard.innerHTML = HTML
@@ -452,23 +484,35 @@ function figure_click(event){
         name = (a.slice(0,a.length-6)).slice(((a.slice(0,a.length-6)).indexOf('.'))+1),
         team = (a.slice(0,a.length-6)).slice(0,((a.slice(0,a.length-6)).indexOf('.'))),
         y = event.target.offsetTop/cellSize,
-        x = raides[event.target.offsetLeft/cellSize -1],
-        coordinates = x+y;
+        x = event.target.offsetLeft/cellSize,
+        xRaide = raides[event.target.offsetLeft/cellSize -1],
+        coordinates = xRaide+' '+y,
+        HTML = '',
+        namePlace = document.querySelector(`#history > .${team} > .figure_name`),
+        figure = document.querySelectorAll(`#board-container > #play_board >.cell`),
+        boardCellCount = 32,
+        click_count;
+
+            for (let i = 0; i < boardCellCount; i++){ 
+                figure[i].style.border = "";
+                if ((figure[i].offsetTop === y*cellSize) && (figure[i].offsetLeft === x*cellSize)){
+                    figure[i].style.border = "4px solid goldenrod";
+                    figures[i].click++;
+                    if (click_count > 1 || figures[i].click % 2 ==0 ){
+                        figure[i].style.border = "";
+                    } 
+                }else{
+                    figures[i].click = 0;
+                }
+            }
+
+            
+        HTML += `Figūra ${name} pajudėjo iš ${coordinates} į  ...`;
+        namePlace.innerHTML = HTML
         
-        // if( team == 'light'){
-
-        // }
-        // namePlace = document.querySelector(`#history > .team > .figure_name`),
-        // currentPositionPlace = document.querySelector(`#history > .team > .current_position`);
-
-console.log('top = '+y);
-console.log('left = '+x);
-console.log('team = '+team);
-console.log('name = '+name);
-console.log(coordinates);
-    
-    return; 
+    return figures; 
 }
+
 var all_figures = playBoard.querySelectorAll('.cell');
     all_figures.forEach(figure => {
         figure.addEventListener( 'click', figure_click );
