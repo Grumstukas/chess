@@ -94,23 +94,12 @@ body {
         #history > .team > .figure_name{
             display: inline-block;
             float: left;
-            width: 40%;
+            width: 100%;
             height: 100%;
             border: 1px solid blue;
-        }
-        #history > .team > .current_position{
-            display: inline-block;
-            float: left;
-            width: 20%;
-            height: 100%;
-            border: 1px solid blue;
-        }
-        #history > .team > .next_position{
-            display: inline-block;
-            float: left;
-            width: 20%;
-            height: 100%;
-            border: 1px solid blue;
+            font-family: Arial;
+            font-size: 10px;
+            line-height: 10px;
         }
     #info > #chart{
         background-color:teal;
