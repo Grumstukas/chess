@@ -1,8 +1,8 @@
-### 8 grupe - Chess project
+### Chess project
 
-This project is for educational porpuses only. Pull request are welcome, but priority for my real-life students! Thank you for your cooperation!
+This project is for educational porpuses only. 
 
 Site published at https://grumstukas.github.io/chess/
 
-### Authors
-[Toma](https://github.com/Grumstukas)
+#### Authors [Toma](https://github.com/Grumstukas)
+#### Teacher [Rimantas](https://github.com/belauzas)
